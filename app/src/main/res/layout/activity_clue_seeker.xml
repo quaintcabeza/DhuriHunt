@@ -10,10 +10,38 @@
     tools:context=".ClueSeeker"
     >
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/clue_image"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_alignParentTop="true"
+        android:src="@drawable/dog"
+        android:layout_above="@+id/linearLayout" />
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout">
+        <Button
+           android:id="@+id/left_button"
+           android:layout_width = "50dp"
+           android:layout_weight = "0"
+           android:layout_height = "wrap_content"
+           android:text="&lt;"
+           />
+        <EditText
+           android:layout_width = "fill_parent"
+           android:layout_height = "wrap_content"
+           android:layout_weight = "1"
+           />
+        <Button
+           android:id="@+id/right_button"
+           android:layout_width = "50dp"
+           android:layout_weight = "0"
+           android:layout_height = "wrap_content"
+           android:text="&gt;"
+           />
+    </LinearLayout>
 </RelativeLayout>
