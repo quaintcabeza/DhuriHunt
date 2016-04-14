@@ -1,25 +1,23 @@
 package quaintcabeza.dhurihunt;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 
-public class ClueSeeker extends ActionBarActivity {
+public class Playback extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clue_seeker);
+        setContentView(R.layout.activity_playback);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_clue_seeker, menu);
+        getMenuInflater().inflate(R.menu.menu_playback, menu);
         return true;
     }
 
@@ -36,10 +34,5 @@ public class ClueSeeker extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void onRightClick(View view) {
-        Intent intent = new Intent(this, Playback.class);
-        startActivity(intent);
     }
 }

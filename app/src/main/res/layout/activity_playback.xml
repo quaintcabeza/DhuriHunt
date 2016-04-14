@@ -7,15 +7,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".ClueSeeker"
+    tools:context="quaintcabeza.dhurihunt.Playback"
     >
 
-    <ImageView
-        android:id="@+id/clue_image"
+    <VideoView
+        android:id="@+id/pertinent_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:src="@drawable/dog"
         android:layout_above="@+id/linearLayout"
         />
 
@@ -24,8 +23,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linearLayout"
-        >
+        android:id="@+id/linearLayout">
         <Button
            android:id="@+id/left_button"
            android:layout_width = "50dp"
@@ -48,4 +46,5 @@
            android:onClick="onRightClick"
            />
     </LinearLayout>
+
 </RelativeLayout>
