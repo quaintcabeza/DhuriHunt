@@ -1,9 +1,11 @@
 package quaintcabeza.dhurihunt;
 
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.VideoView;
 
 
 public class Playback extends ActionBarActivity {
@@ -12,6 +14,11 @@ public class Playback extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playback);
+        final VideoView video = (VideoView)findViewById(R.id.pertinent_video);
+        String path = "android.resource://" + getPackageName() + "/" +
+            R.raw.sample;
+        video.setVideoURI(Uri.parse(path));
+        video.start();
     }
 
     @Override
