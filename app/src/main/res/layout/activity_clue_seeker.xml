@@ -20,14 +20,14 @@
         />
     <ImageButton
         android:id="@+id/video_button"
-        android:layout_width = "100dp"
-        android:layout_height = "100dp"
+        android:layout_width = "103dp"
+        android:layout_height = "103dp"
         android:text="&lt;"
         android:src="@drawable/clue_open"
         android:onClick="onVideoClick"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:visibility="invisible"
+        android:background="@null"
         />
 
     <LinearLayout
