@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,10 @@ public class ClueSeeker extends Activity {
     public void refreshView() {
         Clue clue = d_clues[d_currentIndex];
         d_clueImage.setImageResource(clue.d_imageUrl);
+        d_passPhraseView.setEnabled(!clue.d_passHoGayi);
+        d_passPhraseView.setText(clue.d_passHoGayi ? clue.d_passPhrase : "");
+        d_passPhraseView.setGravity(
+                clue.d_passHoGayi ?  Gravity.CENTER : Gravity.LEFT);
     }
 
     private void initializeState() {
@@ -130,16 +135,16 @@ public class ClueSeeker extends Activity {
         d_clues[7].d_videoUrl = "";
         d_clues[8].d_videoUrl = "";
 
-        d_clues[0].d_passPhrase = "sindhuri maata ki jai ho";
-        d_clues[1].d_passPhrase = "lambu ne tujhe lamba kar diya";
-        d_clues[2].d_passPhrase = "ab main tujhe pehnunga";
-        d_clues[3].d_passPhrase = "kkkkkiran";
-        d_clues[4].d_passPhrase = "terrraaa surooooooor";
-        d_clues[5].d_passPhrase = "kya mast chal hai zaalim";
-        d_clues[6].d_passPhrase = "khushbooo";
+        d_clues[0].d_passPhrase = "Sindhuri Mata ki jai ho";
+        d_clues[1].d_passPhrase = "Lambu ne lamba kar diya";
+        d_clues[2].d_passPhrase = "Ab main tujhe pehnunga";
+        d_clues[3].d_passPhrase = "Kkkkkiran";
+        d_clues[4].d_passPhrase = "Tera surooooooor";
+        d_clues[5].d_passPhrase = "Kya mast chal hai zaalim";
+        d_clues[6].d_passPhrase = "KHUSHBOOO";
         d_clues[7].d_passPhrase = "abcdefghijklmnopqrstuvwxyz";
         d_clues[8].d_passPhrase =
-          "tadapti raaton mein bhadakti jismon ki dhadakti aag ko bujhaane ka";
+          "Tadapti raaton mein bhadakti jismon ki dhadakti aag ko bujhaane ka";
     }
 
     private void restoreState(Bundle savedInstanceState) {
@@ -150,7 +155,12 @@ public class ClueSeeker extends Activity {
     private void addPassPhraseListener() {
         d_passPhraseView.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
-                if (d_passPhraseView.getText().toString().equals("ffff")) {
+                Clue clue = d_clues[d_currentIndex];
+                if (!clue.d_passHoGayi &&
+                      d_passPhraseView.getText().toString().equalsIgnoreCase(
+                        clue.d_passPhrase)) {
+                    clue.d_passHoGayi = true;
+                    refreshView();
                 }
             }
             public void beforeTextChanged(

@@ -29,7 +29,7 @@
         >
         <Button
            android:id="@+id/left_button"
-           android:layout_width = "50dp"
+           android:layout_width = "35dp"
            android:layout_weight = "0"
            android:layout_height = "wrap_content"
            android:text="&lt;"
@@ -40,10 +40,11 @@
            android:layout_width = "fill_parent"
            android:layout_height = "wrap_content"
            android:layout_weight = "1"
+           android:hint="Enter Pass Phrase"
            />
         <Button
            android:id="@+id/right_button"
-           android:layout_width = "50dp"
+           android:layout_width = "35dp"
            android:layout_weight = "0"
            android:layout_height = "wrap_content"
            android:text="&gt;"
