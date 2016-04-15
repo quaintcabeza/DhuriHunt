@@ -88,7 +88,6 @@ public class ClueSeeker extends ActionBarActivity {
     public void refreshView() {
         Clue clue = d_clues[d_currentIndex];
         d_clueImage.setImageResource(clue.d_imageUrl);
-        //d_clueImage.setImageResource(R.drawable.clue);
     }
 
     private void initializeState() {
