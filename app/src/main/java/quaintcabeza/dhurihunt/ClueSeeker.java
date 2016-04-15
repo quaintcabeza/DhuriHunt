@@ -139,7 +139,7 @@ public class ClueSeeker extends Activity {
         d_clues[8].d_videoUrl = "";
 
         d_clues[0].d_passPhrase = "Sindhuri Mata ki jai ho";
-        d_clues[1].d_passPhrase = "Lambu ne lamba kar diya";
+        d_clues[1].d_passPhrase = "Lambu ne tujhe lamba kar diya";
         d_clues[2].d_passPhrase = "Ab main tujhe pehnunga";
         d_clues[3].d_passPhrase = "Kkkkkiran";
         d_clues[4].d_passPhrase = "Tera surooooooor";
