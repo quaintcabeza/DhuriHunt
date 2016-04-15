@@ -1,6 +1,7 @@
 package quaintcabeza.dhurihunt;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -80,7 +81,9 @@ public class ClueSeeker extends ActionBarActivity {
     }
 
     public void onRightClick(View view) {
-        Intent intent = new Intent(this, Playback.class);
+        Intent intent = new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
         startActivity(intent);
     }
 }
