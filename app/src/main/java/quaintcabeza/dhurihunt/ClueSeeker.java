@@ -1,5 +1,6 @@
 package quaintcabeza.dhurihunt;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -15,7 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 
-public class ClueSeeker extends ActionBarActivity {
+public class ClueSeeker extends Activity {
 
     private static final int k_numClues = 9;
 
