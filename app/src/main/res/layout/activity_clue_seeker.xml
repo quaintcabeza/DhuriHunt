@@ -14,10 +14,20 @@
         android:id="@+id/clue_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/dog"
+        android:src="@drawable/clue"
         android:layout_above="@+id/linearLayout"
-        android:onClick="onClueClick"
+        android:layout_alignParentTop="true"
+        />
+    <ImageButton
+        android:id="@+id/video_button"
+        android:layout_width = "100dp"
+        android:layout_height = "100dp"
+        android:text="&lt;"
+        android:src="@drawable/clue_open"
+        android:onClick="onVideoClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible"
         />
 
     <LinearLayout

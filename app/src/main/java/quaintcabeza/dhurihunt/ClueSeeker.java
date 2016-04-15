@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 
@@ -26,6 +27,7 @@ public class ClueSeeker extends Activity {
 
     private EditText d_passPhraseView;
     private ImageView d_clueImage;
+    private ImageButton d_videoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class ClueSeeker extends Activity {
 
         d_passPhraseView = (EditText) findViewById(R.id.pass_phrase_text);
         d_clueImage = (ImageView) findViewById(R.id.clue_image);
+        d_videoButton = (ImageButton) findViewById(R.id.video_button);
 
         if (savedInstanceState != null) {
             restoreState(savedInstanceState);
@@ -75,14 +78,12 @@ public class ClueSeeker extends Activity {
 
     }
 
-    public void onClueClick(View view) {
+    public void onVideoClick(View view) {
         Clue clue = d_clues[d_currentIndex];
-        if (clue.d_passHoGayi) {
-            Intent intent = new Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
-            startActivity(intent);
-        }
+        Intent intent = new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
+        startActivity(intent);
     }
 
     public void onLeftClick(View view) {
@@ -102,7 +103,9 @@ public class ClueSeeker extends Activity {
         d_passPhraseView.setEnabled(!clue.d_passHoGayi);
         d_passPhraseView.setText(clue.d_passHoGayi ? clue.d_passPhrase : "");
         d_passPhraseView.setGravity(
-                clue.d_passHoGayi ?  Gravity.CENTER : Gravity.LEFT);
+                clue.d_passHoGayi ? Gravity.CENTER : Gravity.LEFT);
+        d_videoButton.setVisibility(
+                clue.d_passHoGayi ? View.VISIBLE : View.INVISIBLE);
     }
 
     private void initializeState() {
