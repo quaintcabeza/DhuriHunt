@@ -74,11 +74,17 @@ public class ClueSeeker extends Activity {
 
     }
 
-    public void onLeftClick(View view) {
+    public void onClueClick(View view) {
         Intent intent = new Intent(
                 Intent.ACTION_VIEW,
                 Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
         startActivity(intent);
+    }
+
+    public void onLeftClick(View view) {
+        d_currentIndex = (d_currentIndex == 0) ? k_numClues : d_currentIndex;
+        --d_currentIndex;
+        refreshView();
     }
 
     public void onRightClick(View view) {

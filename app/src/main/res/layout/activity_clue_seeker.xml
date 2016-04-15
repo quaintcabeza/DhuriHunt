@@ -17,6 +17,7 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/dog"
         android:layout_above="@+id/linearLayout"
+        android:onClick="onClueClick"
         />
 
     <LinearLayout
