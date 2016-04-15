@@ -39,7 +39,7 @@
         >
         <Button
            android:id="@+id/left_button"
-           android:layout_width = "35dp"
+           android:layout_width = "45dp"
            android:layout_weight = "0"
            android:layout_height = "wrap_content"
            android:text="&lt;"
@@ -54,7 +54,7 @@
            />
         <Button
            android:id="@+id/right_button"
-           android:layout_width = "35dp"
+           android:layout_width = "45dp"
            android:layout_weight = "0"
            android:layout_height = "wrap_content"
            android:text="&gt;"
