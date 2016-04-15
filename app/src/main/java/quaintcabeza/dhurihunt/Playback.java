@@ -15,10 +15,12 @@ public class Playback extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playback);
         final VideoView video = (VideoView)findViewById(R.id.pertinent_video);
+        /*
         String path = "android.resource://" + getPackageName() + "/" +
             R.raw.sample;
         video.setVideoURI(Uri.parse(path));
         video.start();
+        */
     }
 
     @Override
