@@ -76,10 +76,13 @@ public class ClueSeeker extends Activity {
     }
 
     public void onClueClick(View view) {
-        Intent intent = new Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
-        startActivity(intent);
+        Clue clue = d_clues[d_currentIndex];
+        if (clue.d_passHoGayi) {
+            Intent intent = new Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.youtube.com/watch?v=AEANas_Pjgo"));
+            startActivity(intent);
+        }
     }
 
     public void onLeftClick(View view) {
